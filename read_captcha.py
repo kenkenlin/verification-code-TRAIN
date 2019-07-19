@@ -4,6 +4,8 @@ Created on Thu Jul 18 21:36:51 2019
 
 @author: aa225
 """
+import os
+import image
 
 def read_captcha(path):
     image_array = []
@@ -15,3 +17,5 @@ def read_captcha(path):
         image_array.append(image)
         image_label.append(file_name)
     return image_array, image_label
+
+read_captcha("C:\Users\Jack\Documents\GitHub\verification-code-TRAIN\training_set")
