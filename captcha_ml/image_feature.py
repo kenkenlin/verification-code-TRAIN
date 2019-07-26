@@ -9,12 +9,12 @@ from captcha_ml.config import *
 
 
 #全局变量
-#config = configparser.ConfigParser()
-#config.read("./config.ini")
-#train_data_path = config.get("global", "train_data_path") #训练集存放路径
-#image_character_num = int(config.get("global", "image_character_num")) #识别的验证码个数
-#image_width = int(config.get("global", "image_width")) #标准化的图像宽度（像素）
-#image_height = int(config.get("global", "image_height")) #标准化的图像高度（像素）
+# config = configparser.ConfigParser()
+# config.read("./config.ini")
+# train_data_path = config.get("global", "train_data_path") #训练集存放路径
+# image_character_num = int(config.get("global", "image_character_num")) #识别的验证码个数
+# image_width = int(config.get("global", "image_width")) #标准化的图像宽度（像素）
+# image_height = int(config.get("global", "image_height")) #标准化的图像高度（像素）
 
 
 

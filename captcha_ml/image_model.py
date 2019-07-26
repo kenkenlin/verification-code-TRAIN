@@ -5,7 +5,7 @@ import os
 from os.path import join
 from PIL import Image
 import os
-#import ConfigParser
+# import ConfigParser
 import numpy as np
 from sklearn.model_selection import cross_val_score
 from sklearn.datasets import make_blobs
@@ -27,9 +27,9 @@ import configparser
 
 
 #全局变量
-#config = configparser.ConfigParser()
-#config.read("./config.ini")
-#model_path = config.get("global", "model_path") #模型存放路径
+# config = configparser.ConfigParser()
+# config.read("./config.ini")
+# model_path = config.get("global", "model_path") #模型存放路径
 
 
 #训练模型

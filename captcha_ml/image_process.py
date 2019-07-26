@@ -3,7 +3,8 @@
 
 from PIL import Image
 import random
-import os
+from os import listdir
+import os, os.path
 import time
 import random
 from captcha_ml import image_training
@@ -13,21 +14,21 @@ from captcha_ml.config import *
 
 
 #全局变量
-#config = configparser.ConfigParser()
-#config.read("./config.ini")
-#captcha_path = config.get("global", "captcha_path") #训练集验证码存放路径
-#captcha__clean_path = config.get("global", "captcha__clean_path") #训练集验证码清理存放路径
-##
-#threshold_grey =  int(config.get("global", "threshold_grey")) #过滤的灰度阈值
-#image_character_num = int(config.get("global", "image_character_num")) #识别的验证码个数
-#image_width = int(config.get("global", "image_width")) #标准化的图像宽度（像素）
-#image_height = int(config.get("global", "image_height")) #标准化的图像高度（像素）
+# config = configparser.ConfigParser()
+# config.read("./config.ini")
+# captcha_path = config.get("global", "captcha_path") #训练集验证码存放路径
+# captcha__clean_path = config.get("global", "captcha__clean_path") #训练集验证码清理存放路径
+#
+# threshold_grey =  int(config.get("global", "threshold_grey")) #过滤的灰度阈值
+# image_character_num = int(config.get("global", "image_character_num")) #识别的验证码个数
+# image_width = int(config.get("global", "image_width")) #标准化的图像宽度（像素）
+# image_height = int(config.get("global", "image_height")) #标准化的图像高度（像素）
 
 
 
 
 
-def read_captcha(captcha_path):
+def read_captcha(path):
     """
     读取验证码图片
     :param path: 原始验证码存放路径
@@ -35,17 +36,17 @@ def read_captcha(captcha_path):
     """
     image_array = []
     image_label = []
-    file_list = os.listdir(captcha_path)#获取captcha文件
+    file_list = os.listdir(path)#获取captcha文件
     for file in file_list:
-        image = Image.open(captcha_path + '/' + file)#打开图片
-        file_name = file.split(".")[0]
-        image_array.append(image)
-        image_label.append(file_name)
-        image = []
+            image = Image.open(os.path.join(path, file))#打开图片
+            file_name = file.split(".")[0]
+            image_array.append(image)
+            image_label.append(file_name)
+            image.load()
     return image_array, image_label
 
 
-def image_transfer(image_arry, captcha_clean_save = False):
+def image_transfer(image_arry, image_label, captcha_clean_save = False):
     """
     图像粗清理
     将图像转换为灰度图像，将像素值小于某个值的点改成白色
@@ -303,7 +304,7 @@ def image_save(image_array, image_label):
     :return:
     """
     for num, image_meta in enumerate(image_array):
-        file_path = captcha_path_clean_path + image_label[num] + '\\'
+        file_path = captcha_path_clean_path + image_label[num] + '/'
         file_name = str(int(time.time())) + '_' + str(random.randint(0,100)) + '.gif'
         if not os.path.exists(file_path):
             os.makedirs(file_path)

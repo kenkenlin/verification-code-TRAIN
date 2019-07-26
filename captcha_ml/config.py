@@ -1,8 +1,9 @@
 #-*- coding:utf-8 -*
+
 import os
 os.getcwd()
 #原始路径
-path = 'D:/users/aa225/Documents/GitHub/verification-code-TRAIN/captcha_ml'
+path = 'D:/Users/aa225/Documents/GitHub/verification-code-TRAIN/captcha_ml'
 #训练集原始验证码文件存放路径
 captcha_path = path + '/data/captcha'
 #训练集验证码清理存放路径
