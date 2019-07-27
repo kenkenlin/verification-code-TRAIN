@@ -1,5 +1,9 @@
 # verification-code-TRAIN
 一起來練習機器人破壞者吧
+
+## 機器學習的課本
+	https://machine-learning-python.kspax.io
+
 ## 主要目標
 	https://fbfh.trade.gov.tw/rich/text/fbj/asp/fbji150Q.asp
 攻陷以上網站的機器人(最少爬成功一次)
