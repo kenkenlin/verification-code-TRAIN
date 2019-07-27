@@ -2,13 +2,16 @@
 
 import os
 os.getcwd()
+#'D:\\Users\\Jack\\Documents\\GitHub\\verification-code-TRAIN\\captcha_ml'
 #原始路径
-path = 'D:/Users/aa225/Documents/GitHub/verification-code-TRAIN/captcha_ml'
+global path
+path = os.getcwd()
 #训练集原始验证码文件存放路径
 captcha_path = path + '/data/captcha'
 #训练集验证码清理存放路径
 captcha_path_clean_path = path + '/data/captcha_clean'
 #训练集存放路径
+global train_data_path
 train_data_path = path + '/data/training_data'
 #模型存放路径
 model_path = path + '/data/model/model.model'
@@ -21,9 +24,9 @@ output_path = path + '/data/result/result.txt'
 image_character_num = 6
 
 #图像粗处理的灰度阈值
-threshold_grey = 100
+threshold_grey = 300
 
 #标准化的图像大小
-image_width = 140
-image_height = 35
+image_width = 15
+image_height = 33
 

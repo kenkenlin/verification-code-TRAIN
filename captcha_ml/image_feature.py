@@ -1,7 +1,7 @@
 #-*- coding:utf-8 -*
 
 
-import os
+import os, os.path
 from PIL import Image
 from captcha_ml import image_training
 import configparser

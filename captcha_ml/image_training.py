@@ -2,9 +2,9 @@
 
 #幫助讀取自定義函式
 import sys
-sys.path.append('C:\\Users\\Jack\\Documents\\GitHub')
+sys.path.append('D://Users//Jack//Documents//GitHub//verification-code-TRAIN//captcha_ml')
 sys.path
-
+import os, os.path
 import numpy as np
 from captcha_ml import image_process, image_feature, image_model
 from captcha_ml.config import *
